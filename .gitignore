@@ -8,6 +8,7 @@
 .data
 docker-compose-wordpress
 Thumbs.db
+.htaccess
 
 # wordpress specific
 wp-config.php
