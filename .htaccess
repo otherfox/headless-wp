@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 # BEGIN WordPress
 <IfModule mod_rewrite.c>
@@ -10,3 +11,8 @@ RewriteRule . /headless-wp/index.php [L]
 </IfModule>
 
 # END WordPress
+=======
+# BEGIN WordPress
+
+# END WordPress
+>>>>>>> 65bbec826e0dd4800deb39f439700208b9ec6d30
