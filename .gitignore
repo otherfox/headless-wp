@@ -4,6 +4,9 @@
 .cvs
 *.bak
 *.swp
+.vscode
+.data
+docker-compose-wordpress
 Thumbs.db
 
 # wordpress specific
