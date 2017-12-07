@@ -7,7 +7,7 @@
 /coverage
 
 # settings
-/dev-forum/src/services/api/settings.js
+/src/services/api/settings.js
 
 # production
 /build
