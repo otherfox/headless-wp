@@ -1,21 +1,33 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import methods from './methods';
 
 class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-      </div>
-    );
-  }
+    constructor() {
+        super();
+        this.state = {
+          post: []
+        }
+        this.props = {
+            postType: 'posts',
+            id: 1
+        }
+    }
+    componentDidMount() {
+        let dataURL = method.getPost(this.props.postType, this.props.id);
+        fetch(dataURL)
+          .then(res => res.json())
+          .then(res => {
+            this.setState({
+              post: res
+            })
+          })
+      }
+    render() {
+        return (
+          <div>
+            <h2>Star Wars Movies</h2>
+          </div>
+        )
+    ]}
 }
-
 export default App;

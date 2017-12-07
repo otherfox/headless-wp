@@ -1,4 +1,4 @@
-require( './settings' );
+import settings from './settings';
 
 // Methods
 
@@ -8,7 +8,7 @@ require( './settings' );
 */
 
 function getPosts(postType) {
-    return df_Settings.baseUrl+'wp-json/wp/v2/'+postType+'?_embed' ;
+    return settings.baseUrl+'wp-json/wp/v2/'+postType+'?_embed' ;
 }
 
 /*
@@ -17,5 +17,11 @@ function getPosts(postType) {
 */
 
 function getPost(postType, id) {
-    return df_Settings.baseUrl+'wp-json/wp/v2/'+postType+'/'+id;
+    return settings.baseUrl+'wp-json/wp/v2/'+postType+'/'+id;
 }
+
+
+module.exports = {
+    getPosts: getPosts,
+    getPost: getPost,
+};

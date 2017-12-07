@@ -1,6 +1,12 @@
 // App settings to configure different local environments
 
-var df_Settings = {
-    baseUrl: 'http://headless-wp.dev/',
-    theme: ''
+function df_Settings() {
+    return {
+        baseUrl: 'http://headless-wp.dev/',
+        theme: ''
+    };
+}
+
+module.exports = {
+    df_Settings: df_Settings
 };
