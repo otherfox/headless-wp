@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import methods from './methods';
+import getPost from './services/api/methods';
 
 class App extends Component {
     constructor() {
@@ -7,27 +7,28 @@ class App extends Component {
         this.state = {
           post: []
         }
-        this.props = {
-            postType: 'posts',
-            id: 1
-        }
     }
     componentDidMount() {
-        let dataURL = method.getPost(this.props.postType, this.props.id);
+        let dataURL = getPost('posts', 1);
         fetch(dataURL)
           .then(res => res.json())
           .then(res => {
+            console.log(res.title.rendered);
             this.setState({
-              post: res
+                post: res
             })
           })
       }
     render() {
+        if (this.state.post.title == undefined){
+            return (<div></div>);
+        }
         return (
           <div>
-            <h2>Star Wars Movies</h2>
+            <h2>{ this.state.post.title.rendered }</h2>
+            <div dangerouslySetInnerHTML={ {__html: this.state.post.content.rendered } }></div>
           </div>
         )
-    ]}
+    }
 }
 export default App;

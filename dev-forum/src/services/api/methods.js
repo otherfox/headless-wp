@@ -17,11 +17,9 @@ function getPosts(postType) {
 */
 
 function getPost(postType, id) {
+    console.log('getting '+postType+' id='+id);
     return settings.baseUrl+'wp-json/wp/v2/'+postType+'/'+id;
 }
 
 
-module.exports = {
-    getPosts: getPosts,
-    getPost: getPost,
-};
+export default getPost;
