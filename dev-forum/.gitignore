@@ -6,6 +6,9 @@
 # testing
 /coverage
 
+# settings
+/dev-forum/src/services/api/settings.js
+
 # production
 /build
 
