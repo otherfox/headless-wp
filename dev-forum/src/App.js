@@ -1,25 +1,26 @@
 import React, { Component } from 'react';
 import WPApi from './services/api/wp_api';
-import Post from './components/post';
+import PostsGrid from './components/posts-grid';
 
 class App extends Component {
     constructor() {
         super();
+
         this.state = {
           posts: [],
           selectedPost: null
         }
 
-        WPApi({ method:'getPost', args: ['posts', 1] }, res => {
-          this.setState({ selectedPost: res })
+        WPApi({ method:'getPosts', args: ['posts'] }, res => {
+          this.setState({ posts: res })
         });
     }
     render() {
         // If promise hasn't resolved yet
-        if (!this.state.selectedPost) return <div>Loading ...</div>;
+        if (!this.state.posts) return <div>Loading ...</div>;
 
         return (
-          <Post post={this.state.selectedPost} />
+          <PostsGrid posts={this.state.posts} />
         )
     }
 }

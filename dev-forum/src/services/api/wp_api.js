@@ -1,4 +1,3 @@
-import React from 'react';
 import settings from './settings';
 
 const WPApi = (params, callback) => {
@@ -11,7 +10,8 @@ const WPApi = (params, callback) => {
     * returns posts data as a promise
     */
     getPosts: (postType) => {
-      const dataURL = settings.baseUrl+'wp-json/wp/v2/'+postType+'?_embed' ;
+      console.log('fetching postType: '+postType);
+      const dataURL = settings.baseUrl+'wp-json/wp/v2/'+postType;
       return fetch(dataURL).then(res => res.json());
     },
 
@@ -20,6 +20,7 @@ const WPApi = (params, callback) => {
     * returns post data as a promise
     */
     getPost: (postType, id) => {
+      console.log('fetching postType: '+postType+' id: '+id);
       const dataURL = settings.baseUrl+'wp-json/wp/v2/'+postType+'/'+id;
       return fetch(dataURL).then(res => res.json());
     }

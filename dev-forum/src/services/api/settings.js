@@ -1,7 +1,7 @@
 // App settings to configure different local environments
 
 let settings =  {
-        baseUrl: 'http://headless-wp.dev/',
+        baseUrl: 'https://headless-wp.dev/',
         theme: ''
 }
 
