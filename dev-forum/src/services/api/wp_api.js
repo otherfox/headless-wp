@@ -21,14 +21,11 @@ const WPApi = (params, callback) => {
     */
     getPost: (postType, id) => {
       const dataURL = settings.baseUrl+'wp-json/wp/v2/'+postType+'/'+id;
-      return fetch(dataURL).then(res => {
-        console.log('happened');
-        return res.json()
-      });
+      return fetch(dataURL).then(res => res.json());
     }
   }
 
-  return (typeof methods[method] == 'function') ?
+  return (typeof methods[method] === 'function') ?
     methods[method](...args).then(res => callback(res)) :
     console.log(method+' is not a method of WPApi.');
 }
