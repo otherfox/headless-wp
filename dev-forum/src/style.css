@@ -18,14 +18,15 @@ body {
 .post-item {
   position: relative;
   float: left;
-  width: 10%; /* base */
-  padding: 0 0 11.5% 0; /* width * 1.15 */
+  width: 30%; /* base */
+  padding: 0 0 34.6410161513775% 0; /* base * 2sqrt(3)/3 */
   -o-transform: rotate(-60deg) skewY(30deg);
   -moz-transform: rotate(-60deg) skewY(30deg);
   -webkit-transform: rotate(-60deg) skewY(30deg);
   -ms-transform: rotate(-60deg) skewY(30deg);
   transform: rotate(-60deg) skewY(30deg);
   overflow: hidden;
+  background-color: #ff0000;
   visibility: hidden;
 }
 .post-item * {
@@ -49,19 +50,19 @@ body {
 }
 
 .posts-grid .post-item {
-  margin: 0 0.18%; /* base * 0.018 */
+  margin: 0 1%; /* dbase */
 }
 
-.posts-grid .post-item:nth-child(6n+4) {
+.posts-grid .post-item:nth-child(6n+3) {
   clear:left;
 }
 
-.posts-grid .post-item:nth-child(6n+4), .posts-grid .post-item:nth-child(6n+5), .posts-grid .post-item:nth-child(6n+6) {
-  margin-top: -2.6%; /* base * 0.229 */
-  margin-bottom: -2.6%; /* base * 0.229 */
-  -o-transform: translateX(50.73%) rotate(-60deg) skewY(30deg); /* (base * 0.018 * 4)+ 50*/
-  -moz-transform: translateX(50.73%) rotate(-60deg) skewY(30deg);
-  -webkit-transform: translateX(50.73%) rotate(-60deg) skewY(30deg);
-  -ms-transform: translateX(50.73%) rotate(-60deg) skewY(30deg);
-  transform: translateX(50.73%) rotate(-60deg) skewY(30deg);
+.posts-grid .post-item:nth-child(6n+3), .posts-grid .post-item:nth-child(6n+5), .posts-grid .post-item:nth-child(6n+6) {
+  margin-top: -2.36713610367747%; /* (-sqrt(3)base)/6 + sqrt(3)dbase */
+  margin-bottom: -2.36713610367747%; /* (-sqrt(3)base)/6 + sqrt(3)dbase */
+  -o-transform: translateX(80%) rotate(-60deg) skewY(30deg);
+  -moz-transform: translateX(80%) rotate(-60deg) skewY(30deg); /* 50 + (base/100) * dbase */
+  -webkit-transform: translateX(80%) rotate(-60deg) skewY(30deg); /* 50 + (base/100) * dbase */
+  -ms-transform: translateX(80%) rotate(-60deg) skewY(30deg); /* 50 + (base/100) * dbase */
+  transform: translateX(80%) rotate(-60deg) skewY(30deg); /* 50 + (base/100) * dbase */
 }

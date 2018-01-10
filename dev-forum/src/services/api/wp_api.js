@@ -1,4 +1,5 @@
 import settings from './settings';
+import ApiUtils from './apiUtils';
 
 const WPApi = (params, callback) => {
   const { method, args } = params;
@@ -12,7 +13,10 @@ const WPApi = (params, callback) => {
     getPosts: (postType) => {
       console.log('fetching postType: '+postType);
       const dataURL = settings.baseUrl+'wp-json/wp/v2/'+postType;
-      return fetch(dataURL).then(res => res.json());
+      return fetch(dataURL)
+        .then(ApiUtils.checkStatus)
+        .then(res => res.json())
+        .catch(e => console.log(e));
     },
 
     /*
@@ -22,7 +26,10 @@ const WPApi = (params, callback) => {
     getPost: (postType, id) => {
       console.log('fetching postType: '+postType+' id: '+id);
       const dataURL = settings.baseUrl+'wp-json/wp/v2/'+postType+'/'+id;
-      return fetch(dataURL).then(res => res.json());
+      return fetch(dataURL)
+        .then(ApiUtils.checkStatus)
+        .then(res => res.json())
+        .catch(e => console.log(e));
     }
   }
 
